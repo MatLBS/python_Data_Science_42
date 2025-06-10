@@ -81,15 +81,15 @@ def ft_grey(array) -> list:
 	"""
 
 	(row, col, dim) = array.shape
-	grey_image = np.ndarray((row, col, dim), dtype=np.uint8)
+	grey_img = np.ndarray((row, col, dim), dtype=np.uint8)
 
 	for i in range(row):
 		for j in range(col):
-			grey_image[i, j] = np.mean(array[i, j])
+			grey_img[i, j] = np.mean(array[i, j])
 
-	print(f"Shape gray image: {grey_image.shape}")
-	cv2.imwrite("images/grey_image.jpg", grey_image)
-	return grey_image
+	print(f"Shape gray image: {grey_img.shape}")
+	cv2.imwrite("images/grey_img.jpg", grey_img)
+	return grey_img
 
 
 def main():
