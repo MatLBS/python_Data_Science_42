@@ -1,11 +1,36 @@
-__pycache__
-tester.py
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# All
+*tester.py
 
 
 #Python_01
 
-blue_img.png
-green_img.png
-red_img.png
-invert_img.png
-grey_img.png
+python_1_Array/ex05/images/blue_img.png
+python_1_Array/ex05/images/green_img.png
+python_1_Array/ex05/images/red_img.png
+python_1_Array/ex05/images/invert_img.png
+python_1_Array/ex05/images/grey_img.png
