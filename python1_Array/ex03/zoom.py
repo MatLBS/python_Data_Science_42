@@ -4,7 +4,7 @@ import os
 import matplotlib.pyplot as plt
 from load_image import ft_load
 
-def ft_zoom(path: str):
+def ft_zoom(path: str) -> list:
 	"""
 	This function loads an image from the specified path, zooms into a specific region,
 	and returns the zoomed image in gray.
@@ -17,6 +17,12 @@ def ft_zoom(path: str):
 	print(ft_load(path))
 
 	img = plt.imread(path)
+	plt.title("Normal Image")
+	plt.axis('off')
+	plt.imshow(img)
+	plt.show()
+
+
 	zoomed_img = img[100:500, 450:850]
 	plt.imshow(zoomed_img)
 	plt.title("Zoomed Image")

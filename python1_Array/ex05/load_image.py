@@ -11,6 +11,7 @@ def ft_load(path: str) -> list:
 	Returns:
 		list: A list of the image's pixels in RGB format.
 	"""
+
 	assert os.path.exists(path), "The specified path does not exist."
 	img = cv2.imread(path)
 	assert img is not None, "Image could not be loaded. Please check the file path."
@@ -19,16 +20,4 @@ def ft_load(path: str) -> list:
 	img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 	assert img_rgb is not None, "Image could not be converted to RGB format."
 
-	# subset = img_rgb[0:3, 0:3]
-	# return subset
 	return img_rgb
-
-
-def main():
-	try:
-		print(ft_load("test.txt"))
-	except AssertionError as error:
-		print("AssertionError:", error)
-
-if __name__ == "__main__":
-	main()
