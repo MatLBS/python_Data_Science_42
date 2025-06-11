@@ -14,10 +14,13 @@ def normalize_population(pop_str) -> float:
 	Returns:
 		float: Numeric population value.
 	"""
+	print(pop_str)
 	if pop_str.endswith("M"):
 		return float(pop_str[:-1]) * 1e6
 	elif pop_str.endswith("k"):
 		return float(pop_str[:-1]) * 1e3
+	elif pop_str.endswith("B"):
+		return float(pop_str[:-1]) * 1e9
 	else:
 		return float(pop_str)
 
@@ -46,7 +49,7 @@ def display_graph(data: pd.DataFrame, campus_country: str, other_country: str) -
 	"""
 	campus_country_data = data[data["country"] == campus_country]
 	other_country_data = data[data["country"] == other_country]
-	assert campus_country_data is not None and other_country_data is not None, "Data could not be loaded. Please check the dataset."
+	assert not campus_country_data.empty and not other_country_data.empty, "Data could not be loaded. Please check the dataset."
 
 	display_country(campus_country_data, "green", campus_country)
 	display_country(other_country_data, "blue", other_country)
@@ -64,7 +67,9 @@ def display_graph(data: pd.DataFrame, campus_country: str, other_country: str) -
 def main():
 	try:
 		data = load("population_total.csv")
-		display_graph(data, "France", "Belgium")
+		campus_country = input("In which country is your campus: ")
+		other_country = input("Enter another country: ")
+		display_graph(data, campus_country, other_country)
 	except AssertionError as error:
 		print(AssertionError.__name__ + ":", error)
 
