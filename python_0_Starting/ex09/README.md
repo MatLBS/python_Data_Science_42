@@ -13,7 +13,7 @@ This package was created as an educational exercise to:
 ## Build
 
 ```
-python setup.py sdist bdist_wheel
+python(3) setup.py sdist bdist_wheel
 ```
 
 ## Install
@@ -31,7 +31,7 @@ pip3 show -v ft_package
 ## Test
 
 ```
-python tester.py
+python(3) tester.py
 ```
 
 ## Uninstall
