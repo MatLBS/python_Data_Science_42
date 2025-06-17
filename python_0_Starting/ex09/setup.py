@@ -13,8 +13,7 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     url=(
-        'https://github.com/MatLBS/python_Data_Science_42/'
-        'tree/main/python0_Starting/ex09/ft_package'
+        'https://github.com/MatLBS/python_Data_Science_42/tree/main/python_0_Starting/ex09/src/ft_package'
     ),
     author='matle-br',
     author_email='matle-br@student.42.fr',
