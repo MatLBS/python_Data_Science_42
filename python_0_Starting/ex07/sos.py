@@ -8,7 +8,7 @@ def main(argv):
     NESTED_MORSE = {
         'A': '.-',		'B': '-...',	'C': '-.-.',
         'D': '-..',		'E': '.',		'F': '..-.',
-        'G': '--.',	'	H': '....',		'I': '..',
+        'G': '--.',		'H': '....',		'I': '..',
         'J': '.---',	'K': '-.-',		'L': '.-..',
         'M': '--',	 	'N': '-.',	 	'O': '---',
         'P': '.--.',	'Q': '--.-',	'R': '.-.',
@@ -23,10 +23,11 @@ def main(argv):
 
     assert len(argv) == 2, "you must provide one argument"
     str = argv[1]
-    newStr = ""
+    newStr = []
     for i in range(len(str)):
         assert str[i].upper() in NESTED_MORSE, "the arguments are bad"
-        newStr += NESTED_MORSE[str[i].upper()] + " "
+        newStr.append(NESTED_MORSE[str[i].upper()])
+    newStr = " ".join(newStr)
     print(newStr)
 
 
