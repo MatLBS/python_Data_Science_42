@@ -56,8 +56,8 @@ def display_graph(
         "Data could not be loaded. Please check the dataset."
     )
 
-    display_country(campus_country_data, "green", campus_country)
     display_country(other_country_data, "blue", other_country)
+    display_country(campus_country_data, "green", campus_country)
 
     years = data.columns[1:-50:40]
     plt.xlabel('Year')

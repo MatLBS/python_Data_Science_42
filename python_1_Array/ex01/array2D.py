@@ -20,8 +20,6 @@ def slice_me(family: list, start: int, end: int) -> list:
     end = end if end >= 0 else end * -1
     assert end > start, "End index must be more than start index."
 
-    print(f"My shape is : {np.array(family).shape}")
-
     new_family = []
     while start < end:
         assert isinstance(family[start], list), (
@@ -34,6 +32,7 @@ def slice_me(family: list, start: int, end: int) -> list:
         new_family.append(family[start])
         start += 1
 
+    print(f"My shape is : {np.array(family).shape}")
     print(f"My new shape is : {np.array(new_family).shape}")
     return new_family
 
@@ -41,7 +40,7 @@ def slice_me(family: list, start: int, end: int) -> list:
 def main():
     try:
         family = [
-            [1.80, 78.4],
+            [1.80],
             [2.15, 102.7],
             [2.10, 98.5],
             [1.88, 75.2]]
