@@ -4,6 +4,8 @@ from load_csv import load
 
 
 def display_graph(data: pd.DataFrame, country: str):
+    assert isinstance(data, pd.DataFrame), "Please provide a Dataframe"
+    assert not data.empty, "Dataframe is empty"
     country_data = data.loc[data["country"] == country]
     assert not country_data.empty, (
         "Data could not be loaded. Please check the dataset."

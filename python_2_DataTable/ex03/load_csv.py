@@ -13,11 +13,16 @@ def load(path: str) -> pd.DataFrame:
         Dataset: A Dataset object containing the data from the CSV file.
     """
 
-    if os.path.exists(path) is None:
+    if not isinstance(path, str):
+        return None
+    if os.path.exists(path) is False:
         return None
     if not path.endswith(".csv"):
         return None
-    file_data = pd.read_csv(path)
+    try:
+        file_data = pd.read_csv(path)
+    except Exception:
+        return None
     if file_data is None:
         return None
 

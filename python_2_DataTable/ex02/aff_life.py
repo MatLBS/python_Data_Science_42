@@ -50,6 +50,8 @@ def display_graph(
         campus_country (str): Name of the campus country.
         other_country (str): Name of the other country.
     """
+    assert isinstance(data, pd.DataFrame), "Please provide a Dataframe"
+    assert not data.empty, "Dataframe is empty"
     campus_country_data = data[data["country"] == campus_country]
     other_country_data = data[data["country"] == other_country]
     assert not campus_country_data.empty and not other_country_data.empty, (

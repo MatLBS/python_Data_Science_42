@@ -11,6 +11,15 @@ def display_graph(life: pd.DataFrame, income: pd.DataFrame, date: str) -> None:
         income (pd.DataFrame): DataFrame containing income data.
         date (str): The date for which to display the data.
     """
+    assert isinstance(life, pd.DataFrame), "Please provide a Dataframe"
+    assert isinstance(income, pd.DataFrame), "Please provide a Dataframe"
+    assert not life.empty, "Dataframe is empty"
+    assert not income.empty, "Dataframe is empty"
+    assert date in life.columns, (
+        f"Column '{date}' not found in life expectancy data"
+    )
+    assert date in income.columns, f"Column '{date}' not found in income data"
+
     life_date = life[date]
     income_date = income[date]
 
