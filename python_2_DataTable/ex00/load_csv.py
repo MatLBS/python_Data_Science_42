@@ -28,7 +28,7 @@ def load(path: str) -> pd.DataFrame:
 
 def main():
     try:
-        print(load("life_expectancy_years.csv"))
+        print(load("life_expectacy_years.csv"))
     except AssertionError as error:
         print(AssertionError.__name__ + ":", error)
 

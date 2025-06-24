@@ -20,8 +20,7 @@ def ft_load(path: str) -> list:
     )
     print(f"The shape of image is {img.shape}")
 
-    subset = img[0:3, 0:3]
-    return subset
+    return img
 
 
 def main():

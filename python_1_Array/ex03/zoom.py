@@ -14,9 +14,9 @@ def ft_zoom(path: str) -> list:
         np.ndarray: The zoomed image in gray format.
     """
 
-    print(ft_load(path))
+    img = ft_load(path)
 
-    img = plt.imread(path)
+    print(img)
     plt.title("Normal Image")
     plt.axis('off')
     plt.imshow(img)

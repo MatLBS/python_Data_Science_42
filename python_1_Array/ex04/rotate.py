@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from load_image import ft_load
 
 
 def rotate_axis(img: list) -> list:
@@ -31,7 +32,9 @@ def ft_rotate(path: str) -> list:
         list: The rotated grayscale image.
     """
 
-    img = plt.imread(path)
+    img = ft_load(path)
+
+    print(img)
     zoomed_img = img[100:500, 450:850]
     gray_image = zoomed_img[:, :, 1]    # 0 = Red; 1 = Green; 2 = Blue
     h, w = gray_image.shape
