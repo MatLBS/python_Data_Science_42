@@ -15,7 +15,7 @@ class calculator:
         dot_product = 0
         for i in range(len(V1)):
             dot_product += (V1[i] * V2[i])
-        print(dot_product)
+        print(f"Dot product is: {dot_product}")
 
     @staticmethod
     def add_vec(V1: list[float], V2: list[float]) -> None:
@@ -25,7 +25,7 @@ class calculator:
         new_lst = []
         for i in range(len(V1)):
             new_lst.append(float(V1[i] + V2[i]))
-        print(new_lst)
+        print(f"Add Vector is: {new_lst}")
 
     @staticmethod
     def sous_vec(V1: list[float], V2: list[float]) -> None:
@@ -35,7 +35,7 @@ class calculator:
         new_lst = []
         for i in range(len(V1)):
             new_lst.append(float(V1[i] - V2[i]))
-        print(new_lst)
+        print(f"Sous Vector is: {new_lst}")
 
 
 def main():

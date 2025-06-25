@@ -19,13 +19,17 @@ class King(Baratheon, Lannister):
 
 
 def main():
-    Joffrey = King("Joffrey")
-    print(Joffrey.__dict__)
-    Joffrey.set_eyes("blue")
-    Joffrey.set_hairs("light")
-    print(Joffrey.get_eyes())
-    print(Joffrey.get_hairs())
-    print(Joffrey.__dict__)
+    try:
+        print(King.__mro__)
+        Joffrey = King("Joffrey")
+        print(Joffrey.__dict__)
+        Joffrey.set_eyes("blue")
+        Joffrey.set_hairs("light")
+        print(Joffrey.get_eyes())
+        print(Joffrey.get_hairs())
+        print(Joffrey.__dict__)
+    except AssertionError as error:
+        print(AssertionError.__name__ + ":", error)
 
 
 if __name__ == "__main__":
