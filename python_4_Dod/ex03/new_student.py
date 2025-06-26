@@ -27,14 +27,17 @@ class Student:
     surname: str
     active: bool = field(init=False, default=True)
     login: str = field(init=False, default="Eagle")
-    id: int = field(init=False, default=generate_id())
+    id: int = field(init=False, default_factory=generate_id)
 
 
 def main():
-    student = Student(name="Edward", surname="agle")
-    print(student)
-    student = Student(name="Edward", surname="agle", id="toto")
-    print(student)
+    try:
+        student = Student(name="Edward", surname="agle")
+        print(student)
+        student = Student(name="Edward", surname="agle", id="toto")
+        print(student)
+    except (TypeError, AssertionError) as error:
+        print("TypeError:", error)
 
 
 if __name__ == "__main__":

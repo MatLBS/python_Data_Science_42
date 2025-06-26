@@ -34,7 +34,7 @@ class calculator:
         """
         self.lst = [x + object for x in self.lst]
         print(self.lst)
-        return [x for x in self.lst]
+        return self.lst
 
     def __mul__(self, object) -> None:
         """
@@ -43,7 +43,7 @@ class calculator:
         """
         self.lst = [x * object for x in self.lst]
         print(self.lst)
-        return [x for x in self.lst]
+        return self.lst
 
     def __sub__(self, object) -> None:
         """
@@ -52,7 +52,7 @@ class calculator:
         """
         self.lst = [x - object for x in self.lst]
         print(self.lst)
-        return [x for x in self.lst]
+        return self.lst
 
     def __truediv__(self, object) -> None:
         """
@@ -65,7 +65,7 @@ class calculator:
         assert object != 0, "You cannot do a division by 0."
         self.lst = [x / object for x in self.lst]
         print(self.lst)
-        return [x for x in self.lst]
+        return self.lst
 
 
 def main():

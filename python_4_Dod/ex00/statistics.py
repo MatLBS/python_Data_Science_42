@@ -7,6 +7,10 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
         of statistics to calculate.
         Valid keys are "mean", "median", "quartile", "std", and "var".
     """
+    assert all(isinstance(arg, (int, float)) for arg in args), (
+        "Values must be int or float"
+    )
+
     len_args = len(args)
     for kwarg in kwargs:
         if len_args == 0:
@@ -17,8 +21,15 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
                 mean = sum(args) / len_args
                 print(f"mean : {mean}")
             case "median":
-                median = int(len_args / 2)
-                print(f"median : {sorted(args)[median]}")
+                sorted_args = sorted(args)
+                mid = len_args // 2
+                if len_args % 2 == 0:
+                    median = (
+                        float((sorted_args[mid - 1] + sorted_args[mid]) / 2)
+                    )
+                else:
+                    median = float(sorted_args[mid])
+                print(f"median : {median}")
             case "quartile":
                 first_quart = int(len_args / 4)
                 third_quart = int(len_args * 0.75)
@@ -41,8 +52,6 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
                     sum_square += (x - mean)**2
                 var = sum_square / len_args
                 print(f"var : {var}")
-            case _:
-                assert "Error"
 
 
 def main():
@@ -61,7 +70,7 @@ def main():
         )
         print("-----")
         ft_statistics(toto="mean", tutu="median", tata="quartile")
-    except AssertionError as error:
+    except (AssertionError, ValueError) as error:
         print(error)
 
 

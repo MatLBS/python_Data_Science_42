@@ -7,7 +7,6 @@ def square(x: int | float) -> int | float:
         int | float: The square of the input number.
     """
     assert isinstance(x, (int, float)), "The value must be integer or float"
-    assert x != 0, "You can not divide by 0"
     return x**2
 
 
@@ -20,6 +19,7 @@ def pow(x: int | float) -> int | float:
         int | float: The result of raising the input
         number to the power of itself.
     """
+    assert isinstance(x, (int, float)), "The value must be integer or float"
     return x**x
 
 
